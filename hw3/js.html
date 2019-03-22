@@ -1,0 +1,144 @@
+<html>
+
+<!-- <head>
+    <script>
+        a = 1
+        b = 2
+        a + b
+        console.log('another message')
+        console.log(a + b)
+    </script>
+    <p>how many airplane crash in the past decade </p> -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    @media (min-width:400px) {
+        #container {
+            display: grid;
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    @media (min-width:600px) {
+        #container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+</style>
+
+<body>
+
+    <h1>GaoKao</h1>
+    <p>Do you wanna test how many marks you will get in the entrance exam to Key Universities in China?</p>
+    <p>Click this button and see your marks here</p>
+    <button onclick="myFunction()">Score</button>
+    <p id="gaokao"></p>
+
+    <h1>Calculator</h1>
+    <p>A bond’s price equals the present value of its expected future cash flows. The rate of interest used to discount the bond’s cash flows is known as the yield to maturity (YTM)</p>
+    <p>you want to know how to price a bond?input these variables and get the bond priced!Act now</p>
+    <div id="container">
+        <div class="r"><button id="r">interest rate</button></div>
+        <input id="num1" type="number" value="0.2">
+        <div class="t"><button id="t">time to maturity/year</button></div>
+
+        <input id="num2" type="number" value="2">
+        <div class="p"> <button id="p">principle</button></div>
+        <input id="num3" type="number" value="100">
+        <div class="c"><button id="c">coupon</button></div>
+        <input id="num4" type="number" value="0.1">
+        <div class="calculate"> <button onclick="calculate()" id="cal">calcuate</button></div>
+
+        <input id="result" type="number">
+
+    </div>
+
+
+
+    <script>
+        // function isRanggIn(target)
+        // {var num1 = parseFloat(target); 
+        // if (num1<0||num1>1){return false; } 
+        // return true; }
+        function myFunction() {
+            var x = document.getElementById("gaokao")
+            x.innerHTML = Math.floor((Math.random() * 750) + 0);
+
+
+        }
+
+
+
+
+
+
+
+        function calculate() {
+
+            r = document.getElementById("num1").value
+            t = document.getElementById("num2").value
+            p = document.getElementById("num3").value
+            c = document.getElementById("num4").value
+            result = (+c) * (+p) * (1 - Math.pow((1 + r), -t)) / r + (+p) * Math.pow((1 + r), -t)
+
+            document.getElementById("result").value = result
+        }
+
+        document.getElementById("cal").addEventListener('click', calculate)
+        document.getElementById("num1").addEventListener('change', calculate)
+        document.getElementById("num2").addEventListener('change', calculate)
+        document.getElementById("num3").addEventListener('change', calculate)
+        document.getElementById("num4").addEventListener('change', calculate)
+
+
+
+        var r = {
+            from: 0,
+            to: 1
+
+        };
+    </script>
+
+
+
+    <!-- <p>interest rate</p>
+    <input id="num1" type="number" value="0.1">
+    <p>maturity</p>
+    <input id="num2" type="number" value="10">
+    <p>par value of the bond</p>
+    <input id="num3" type="number" value="1000">
+
+    <input id="num4" type="number" value="0.05">
+    <button id="cal">calculate</button>
+    <input id="lastresult" type="number">
+    <script>
+        function calculate() {
+            // i = document.getElementById("num1").value
+            // t = document.getElementById("num2").value
+            p = document.getElementById("num3").value
+            c = document.getElementById("num4").value
+            result = (+p) * (+c)
+
+            document.getElementById("lastresult").value = result
+        }
+        document.getElementById("cal").addEventListener('click', calculate)
+        document.getElementById("num3").addEventListener('change', calculate)
+        document.getElementById("num4").addEventListener('change', calcualte)
+    </script>
+    <script>
+        var
+    </script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
