@@ -12,9 +12,9 @@
 </head>
 
 <body>
-    <script src="../../code/highcharts.js"></script>
-    <script src="../../code/modules/exporting.js"></script>
-    <script src="../../code/modules/export-data.js"></script>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
 
     <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
 
@@ -40,7 +40,7 @@
             yAxis: {
                 min: 0,
                 title: {
-                    text: 'Population (millions)',
+                    text: 'Number of people',
                     align: 'high'
                 },
                 labels: {
@@ -48,7 +48,7 @@
                 }
             },
             tooltip: {
-                valueSuffix: ' millions'
+                // valueSuffix: ' thousand'
             },
             plotOptions: {
                 bar: {
