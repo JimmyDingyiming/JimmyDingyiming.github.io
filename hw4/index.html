@@ -1,0 +1,106 @@
+<html>
+
+<div class="text">
+    <p>Here is what the chart is wrong</p>
+    <p>there are asndaodnsfndifncdofnddcd</p>
+    <p>sdbhsdbjbjcsjcs</p>
+</div>
+<style>
+                @media (min-width: 600px) {
+        .text {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            .picture {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: auto;
+</style>
+
+</html>
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="../../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div class="picture"><img src="../chart.png" style="width:800px; max-width: 100%"></div>
+
+    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'Total War: Warhammer @2160p(fps)'
+            },
+            subtitle: {
+                text: 'Source: <a href="http://getdolphins.com/blog/the-worst-graphs-of-2017/">graph</a>'
+            },
+            xAxis: {
+                categories: ['AMD Threadripper 1950X(Game Mode)', 'Intel Core i9-7900X'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Population (millions)',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' millions'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                    name: 'Year 1800',
+                    data: [68, 69]
+                }
+
+            ]
+        });
+    </script>
+</body>
+
+</html>
