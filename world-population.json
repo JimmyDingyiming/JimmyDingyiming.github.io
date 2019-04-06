@@ -1,0 +1,68 @@
+[{
+        "code3": "IDN",
+        "z": 473,
+        "code": "ID"
+    },
+
+    {
+        "code3": "CUB",
+        "z": 122,
+        "code": "CU"
+    },
+
+    {
+        "code3": "MYS",
+        "z": 239,
+        "code": "MY"
+    },
+
+    {
+        "code3": "MLI",
+        "z": 116,
+        "code": "ML"
+    },
+
+    {
+        "code3": "NPL",
+        "z": 71,
+        "code": "NP"
+    },
+
+    {
+        "code3": "RUS",
+        "z": 225,
+        "code": "RU"
+    },
+    {
+        "code3": "PAK",
+        "z": 48,
+        "code": "PK"
+    },
+    {
+        "code3": "TWN",
+        "z": 48,
+        "code": "TW"
+    },
+    {
+        "code3": "UKR",
+        "z": 298,
+        "code": "UKR"
+    },
+    {
+        "code3": "COL",
+        "z": 71,
+        "code": "CO"
+    },
+
+    {
+        "code3": "IRN",
+        "z": 66,
+        "code": "IR"
+    },
+
+    {
+        "code3": "ETH",
+        "z": 157,
+        "code": "EE"
+    }
+]
