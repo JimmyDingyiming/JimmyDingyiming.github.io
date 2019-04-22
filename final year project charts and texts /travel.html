@@ -28,32 +28,34 @@
         var data = [{
                 'id': '0.0',
                 'parent': '',
-                'name': 'Hong Kong people'
+                'name': 'Hong Kong residents average around 20 days of annual leave'
             }, {
                 'id': '1.1',
                 'parent': '0.0',
                 'name': 'travel overseas',
+                'value': 70
 
             }, {
                 'id': '1.2',
                 'parent': '0.0',
-                'name': 'travel to mainland China',
+                'name': 'stay in Hong Kong or travel to mainland China',
+                'value': 30
 
             }, {
                 'id': '2.1',
                 'parent': '1.1',
                 'name': 'Japan',
-                'value': 23 + '%'
+                'value': 23
             }, {
                 'id': '2.2',
                 'parent': '1.1',
                 'name': 'Taiwan',
-                'value': 18 + '%'
+                'value': 18
             }, {
                 'id': '2.3',
                 'parent': '1.1',
                 'name': 'Thailand',
-                'value': 10 + '%'
+                'value': 10
             },
 
             /* Africa */
@@ -61,8 +63,13 @@
                 'id': '2.4',
                 'parent': '1.1',
                 'name': 'South Korea',
-                'value': 10 + '%'
-            },
+                'value': 10
+            }, {
+                'id': '2.5',
+                'parent': '1.1',
+                'name': 'Other countries',
+                'value': 9
+            }
         ];
 
         // Splice in transparent for the center circle
@@ -76,10 +83,10 @@
             },
 
             title: {
-                text: 'World population 2017'
+                text: "Hong Kong people's tastes on travelling"
             },
             subtitle: {
-                text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>'
+                text: ''
             },
             series: [{
                 type: "sunburst",
@@ -87,7 +94,7 @@
                 allowDrillToNode: true,
                 cursor: 'pointer',
                 dataLabels: {
-                    format: '{point.name}',
+                    // format: '{point.name}',
                     filter: {
                         property: 'innerArcLength',
                         operator: '>',
@@ -97,6 +104,9 @@
                 levels: [{
                     level: 1,
                     levelIsConstant: false,
+                    // tooltip: {
+                    //     pointFormat: " <b>{point.name} "
+                    // },
                     dataLabels: {
                         filter: {
                             property: 'outerArcLength',
@@ -106,12 +116,19 @@
                     }
                 }, {
                     level: 2,
-                    colorByPoint: true
+                    colorByPoint: true,
+                    tooltip: {
+                        pointFormat: " <b>{point.value} % of 20days are spent on {point.name} "
+                    },
                 }, {
                     level: 3,
                     colorVariation: {
                         key: 'brightness',
                         to: -0.5
+                    },
+                    tooltip: {
+                        headerFormat: "",
+                        pointFormat: " <b>{point.name}</b> is preferred by <b>{point.value}</b> % Hong Kong people who loves travelling"
                     }
                 }, {
                     level: 4,
@@ -122,10 +139,7 @@
                 }]
 
             }],
-            tooltip: {
-                headerFormat: "",
-                pointFormat: 'The population of <b>{point.name}</b> is <b>{point.value}</b>'
-            }
+
         });
     </script>
 </body>

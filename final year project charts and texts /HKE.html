@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                type: 'pie'
+            },
+            title: {
+                text: 'Different types of aircraft owned in HK Express'
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.y} fleets</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        format: '<b>{point.name}</b>: {point.y} fleets ',
+                        style: {
+                            color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                        }
+                    }
+                }
+            },
+            series: [{
+                name: 'Number of fleets',
+                colorByPoint: true,
+                data: [{
+                    name: 'A320 Neo',
+                    y: 5,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'A320-200',
+                    y: 8,
+                    sliced: true,
+                    selected: true
+                }, {
+                    name: 'A321',
+                    y: 11,
+                    sliced: true,
+                    selected: true
+                }, ]
+            }]
+        });
+    </script>
+</body>
+
+</html>

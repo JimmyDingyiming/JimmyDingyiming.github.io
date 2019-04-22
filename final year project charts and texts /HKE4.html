@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Routes and aircraft between Cathay and HKX'
+            },
+            subtitle: {
+
+            },
+            xAxis: {
+                categories: ['Cathay', 'HKE', ],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' '
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                // backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                    name: 'The number of destinations',
+                    data: [201, 24]
+                }, {
+                    name: 'The number of airplanes',
+                    data: [232, 28]
+                }, {
+                    name: 'The number of countries (flying to)',
+                    data: [24, 9]
+                }
+
+                //     name: 'Year 1900',
+                //     data: [133, 156, 947, 408, 6]
+                // }, {
+                //     name: 'Year 2000',
+                //     data: [814, 841, 3714, 727, 31]
+                // }, {
+                //     name: 'Year 2016',
+                //     data: [1216, 1001, 4436, 738, 40]
+            ]
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="min-width: 310px; max-width: 800px; height: 400px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: "People's demand for aircraft has been surging in the past five years"
+            },
+            subtitle: {
+                text: 'Source: <a href="https://www.statista.com/statistics/564717/airline-industry-passenger-traffic-globally/">IATA</a>'
+            },
+            xAxis: {
+                categories: ['2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'Number of passengers boarded by airplane',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' million'
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            // legend: {
+            //     layout: 'vertical',
+            //     align: 'right',
+            //     verticalAlign: 'top',
+            //     x: -40,
+            //     y: 80,
+            //     floating: true,
+            //     borderWidth: 1,
+            //     // backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            //     shadow: true
+            // },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'Passengers boarded by Airplane',
+                data: [1994,
+                    2135,
+                    2255,
+                    2452,
+                    2489,
+                    2479,
+                    2695,
+                    2859,
+                    2991,
+                    3143,
+                    3326,
+                    3565,
+                    3815,
+                    4093,
+                    4343,
+                    4588
+                ]
+            }, ]
+        });
+    </script>
+</body>
+
+</html>
