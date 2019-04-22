@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/highcharts-3d.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="height: 400px"></div>
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45
+                }
+            },
+            title: {
+                text: 'Market share of commercial airline'
+            },
+            subtitle: {
+                text: 'source: Forbes'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 1,
+                    depth: 45
+                }
+            },
+            series: [{
+                name: 'Market share of commercial airline' + '%',
+                data: [
+                    ['Boeing', 43, ],
+                    ['Airbus', 45, ],
+
+                    ['Other airline manufacture', 14],
+
+                ]
+            }]
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+        #container {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 0 auto
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/sunburst.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+
+    <div id="container"></div>
+
+
+
+    <script type="text/javascript">
+        var data = [{
+                'id': '0.0',
+                'parent': '',
+                'name': 'Hong Kong people'
+            }, {
+                'id': '1.1',
+                'parent': '0.0',
+                'name': 'travel overseas',
+
+            }, {
+                'id': '1.2',
+                'parent': '0.0',
+                'name': 'travel to mainland China',
+
+            }, {
+                'id': '2.1',
+                'parent': '1.1',
+                'name': 'Japan',
+                'value': 23 + '%'
+            }, {
+                'id': '2.2',
+                'parent': '1.1',
+                'name': 'Taiwan',
+                'value': 18 + '%'
+            }, {
+                'id': '2.3',
+                'parent': '1.1',
+                'name': 'Thailand',
+                'value': 10 + '%'
+            },
+
+            /* Africa */
+            {
+                'id': '2.4',
+                'parent': '1.1',
+                'name': 'South Korea',
+                'value': 10 + '%'
+            },
+        ];
+
+        // Splice in transparent for the center circle
+        Highcharts.getOptions().colors.splice(0, 0, 'transparent');
+
+
+        Highcharts.chart('container', {
+
+            chart: {
+                height: '100%'
+            },
+
+            title: {
+                text: 'World population 2017'
+            },
+            subtitle: {
+                text: 'Source <href="https://en.wikipedia.org/wiki/List_of_countries_by_population_(United_Nations)">Wikipedia</a>'
+            },
+            series: [{
+                type: "sunburst",
+                data: data,
+                allowDrillToNode: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    format: '{point.name}',
+                    filter: {
+                        property: 'innerArcLength',
+                        operator: '>',
+                        value: 16
+                    }
+                },
+                levels: [{
+                    level: 1,
+                    levelIsConstant: false,
+                    dataLabels: {
+                        filter: {
+                            property: 'outerArcLength',
+                            operator: '>',
+                            value: 64
+                        }
+                    }
+                }, {
+                    level: 2,
+                    colorByPoint: true
+                }, {
+                    level: 3,
+                    colorVariation: {
+                        key: 'brightness',
+                        to: -0.5
+                    }
+                }, {
+                    level: 4,
+                    colorVariation: {
+                        key: 'brightness',
+                        to: 0.5
+                    }
+                }]
+
+            }],
+            tooltip: {
+                headerFormat: "",
+                pointFormat: 'The population of <b>{point.name}</b> is <b>{point.value}</b>'
+            }
+        });
+    </script>
+</body>
+
+</html>

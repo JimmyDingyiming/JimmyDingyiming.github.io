@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+        #container {
+            min-width: 300px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/heatmap.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/treemap.js"></script>
+    <div id="container"></div>
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            colorAxis: {
+                minColor: '#FFFFFF',
+                maxColor: Highcharts.getOptions().colors[0]
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:10px">{point.key}  </span><table>',
+                pointFormat: '<b> owns <span style="font-size:10px">{point.value} </span> A380</b></td></tr>',
+                footerFormat: '</table>',
+                shared: true,
+                useHTML: true
+            },
+            series: [{
+                type: 'treemap',
+                layoutAlgorithm: 'squarified',
+                data: [{
+                    name: 'Emirates',
+                    value: 105,
+                    colorValue: 13
+                }, {
+                    name: 'Singapore Airlines',
+                    value: 19,
+                    colorValue: 12
+                }, {
+                    name: 'Lufthansa',
+                    value: 14,
+                    colorValue: 11
+                }, {
+                    name: 'British Airways',
+                    value: 12,
+                    colorValue: 10
+                }, {
+                    name: 'Qanta Airways',
+                    value: 10,
+                    colorValue: 9
+                }, {
+                    name: 'Etihad',
+                    value: 10,
+                    colorValue: 8
+                }, {
+                    name: 'Korean Air',
+                    value: 10,
+                    colorValue: 7
+                }, {
+                    name: 'Air Frnace',
+                    value: 10,
+                    colorValue: 6
+                }, {
+                    name: 'Asiana Airlines',
+                    value: 6,
+                    colorValue: 5
+                }, {
+                    name: 'Malaysia Airlines',
+                    value: 6,
+                    colorValue: 4
+                }, {
+                    name: 'Thai Airways',
+                    value: 6,
+                    colorValue: 3
+
+                }, {
+                    name: 'China Southern',
+                    value: 5,
+                    colorValue: 2
+
+                }, {
+                    name: 'HiFly Malta',
+                    value: 1,
+                    colorValue: 1
+                }]
+            }],
+            title: {
+                text: 'Number of A380 currently in service'
+            }
+
+        });
+    </script>
+</body>
+
+</html>

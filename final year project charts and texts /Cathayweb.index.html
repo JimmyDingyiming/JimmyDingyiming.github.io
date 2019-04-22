@@ -1,0 +1,314 @@
+<html>
+<style>
+    responsive-block {
+        display: block;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    ratio-1-to-1 responsive-block {
+        display: block;
+        position: relative;
+        padding-bottom: 100%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    ratio-4-to-3 responsive-block {
+        display: block;
+        position: relative;
+        padding-bottom: 75%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+    
+    responsive-block iframe,
+    responsive-block object,
+    responsive-block embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    body {
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #333;
+    }
+    
+    p {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    h3 {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+    
+    h2 {
+        border-bottom: 1px solid #ccc;
+        margin-top: 2em
+    }
+    
+    figure {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    figure figcaption {
+        display: block;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 0.85em;
+    }
+    
+    cover-image {
+        display: block;
+        position: relative;
+    }
+    
+    cover-image h1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        color: black;
+        text-align: center;
+    }
+    
+    cover-image author-block {
+        position: absolute;
+        bottom: 1em;
+        left: 0;
+        right: 0;
+        color: black;
+        text-align: center;
+        padding: 10px;
+        opacity: 0.6;
+        background-color: white;
+    }
+    
+    code {
+        margin: 0;
+        max-width: 100%;
+        word-break: break-all;
+        font-family: monospace;
+    }
+    
+    img {
+        max-width: 100%;
+    }
+</style>
+<title>Cathay Pacific </title>
+<cover-image>
+    <img src="https://onemileatatime.com/wp-content/uploads/2017/11/Cathay-Pacific-A350-Business-Class-1.jpg">
+    <h1>Cathay may fly higher with its transformation implemented </h1>
+    <p>Analysts expected Cathay's business is back on the right track, thanks to its transformation plan reshaping its profit.</p>
+    <p>Finally, Cathay's net profit flies higher this year, with net profit recorded at HK$2.3 billion, a big turnaround from the previous two years. Curtis Yeung, a securities analyst, said "Cathay may have stepped out of its troughs since the transformation
+        plan has already completed 2/3 phase."
+
+    </p>
+    <h2>Investment banks raised Cathay's rating </h2>
+    <p>
+        Bank of America raised its investment rating on Cathay to "buy", saying "The nice earnings recovery resulted from surging passenger and cargo yields."
+    </p>
+    <p>
+        Analysts said Cathay's costly fuel hedges have largely expired with Brent oil hedged at US$65 for 2019. The transformation program also makes the ex-fuel unit costs under control. Morgan Stanley issued report saying Cathay Pacific back to profitability
+        but valuation still at bottom.
+    </p>
+    <img src="https://hongkongbusiness.hk/sites/default/files/imagecache/600x360/news/cathay-pacific-plane_0.jpg">
+    <p>
+
+        From 2014 to 2018, Cathay has already lost HK$24 billion on oil hedging. "The lock in price of oil peaked at US$90 per bottle. It is much likely that Cathay Pacific used short put instead of long call to do the oil hedging. That is why it recorded huge
+        losses in its oil hedging in the past two years," said Yeung.
+
+    </p>
+    <p>
+        Cathay already realized it had set a wrong oil hedging strategy since it should have benefited from the low oil price and got a higher profit margin. Cathay optimized its oil hedging strategy by implementing its three-year transformation program Yeung
+        said, "The lower hedging ratio for Cathay is a wise decision. Apart from ratio, more important factors are lock in price and the option strategy." Yeung is confident about Cathay since it has improved its oil hedging strategy.
+
+
+
+    </p>
+    <p>Since many countries have grounded Boeing 737 MAX, Edward Xu, equity analyst in Morgan Stanley said Cathay could actually benefit from the tightening capacity. "Cathay Pacific has no exposure to the B737 MAX in either its current fleet in service
+        or further fleet orders," said Xu.
+
+    </p>
+    <!DOCTYPE HTML>
+    <html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Highcharts Example</title>
+
+        <style type="text/css">
+
+        </style>
+    </head>
+
+    <body>
+        <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+        <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+        <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+        <div id="container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+
+
+
+        <script type="text/javascript">
+            Highcharts.chart('container', {
+                chart: {
+                    plotBackgroundColor: null,
+                    plotBorderWidth: null,
+                    plotShadow: false,
+                    type: 'pie'
+                },
+                title: {
+                    text: 'Different types of aircraft owned in Cathay Pacific'
+                },
+                tooltip: {
+                    pointFormat: '{series.name}: <b>{point.y} fleets</b>'
+                },
+                plotOptions: {
+                    pie: {
+                        allowPointSelect: true,
+                        cursor: 'pointer',
+                        dataLabels: {
+                            enabled: true,
+                            format: '<b>{point.name}</b>: {point.y} fleets ',
+                            style: {
+                                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                            }
+                        }
+                    }
+                },
+                series: [{
+                    name: 'Number of fleets',
+                    colorByPoint: true,
+                    data: [{
+                        name: 'A330',
+                        y: 33,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'A350 XWB',
+                        y: 33,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Boeing 747',
+                        y: 21,
+                        sliced: true,
+                        selected: true
+                    }, {
+                        name: 'Boeing 777',
+                        y: 69,
+                        sliced: true,
+                        selected: true
+                    }]
+                }]
+            });
+        </script>
+    </body>
+
+    </html>
+    <p>
+        Analysts from Morgan Stanley said although Cathay's share price bounded sharply. The stock is still trading at historical low level of 0.7x2019e P/B. With ROE likely to recover further to 7.4% in 2019, Morgan Stanley held the opinion that current valuation
+        is attractive.
+
+
+
+    </p>
+    <P>By launching its revamp program, Cathay initiated to axe its staff, to add more economy class seats to its older Boeing Co 777 jets and it has also charged fuel-surcharges to its customers which compensate its oil purchasing costs."
+
+    </P>
+    <h2>Risks simmered desipte the revamped plan</h2>
+    <P>
+        Although the transformation plan is well implemented, there are still risks posing on Cathay's future development. Research report from Bank of America said Air Cargo is the key risk for Cathay Pacific since the indicator suggesting the demand is set
+        to stay lukewarm through the first half of 2019 and the revenue from cargo unit is set to decline.
+    </P>
+    <P>
+        Research from Morgan Stanley classified the risks as competition from global peers, especially for long-haul transit passengers, demand weakness in the premium market and exogenous event.
+    </P>
+    <p>Paul Yong, analyst in DBS Bank said the key risk would come from a sustained spike in oil price and expected economic slowdown in Asia region.
+
+    </p>
+    <p>
+        Cathay Pacific was founded in 1946 and for several decades had faced little competition out of its central Hong Kong hub. However, its business got stunt for the last two years as the market is becoming more and more competitive and the failure of Cathay's
+        internal management.
+    </p>
+    <p>
+        The challenge for Cathay dated back to 1985 when Dragon air was established, focusing on the routes to mainland cities. In September 2006, Cathay Pacific bought Dragon air for HK$8.22 billion following a clear main objective to expand into Mainland China.
+        The plan was successful, and Cathay Dragon mingled well with the company.
+    </p>
+
+    <p>
+        Lucy Mou, an exchange student in Hong Kong said she was extremely surprised by the services provided by Cathay Dragon. "The experience was great; the food is in high quality and the crew members are passionate about their services. By the way, I really
+        like Haagen-Dazs provided by Cathay Dragon."
+    </p>
+    <p>
+        Although Cathay has got some praise from its customers, it seems there is service gaps between Cathay Dragon and Cathay Pacific. Dave Osborne wrote a letter on SCMP, blaming Cathay Pacific for its delay and is currently rewarding loyal customers with
+        worst service.
+    </p>
+    <p>
+        The glorious time of Cathay, once dominated Asia sky are gone when the annual results of Cathay disappointed investors. The company posted its loss for HK$575 million in 2016, further widened to HK$1.26 billion in 2017. In 2017, with less than HK$50 billion
+        market capitalization, Cathay was kicked out of Hang Seng Index 50.
+    </p>
+    <p>
+        The data breach scandal further gloomed Cathay's corporate image. Cathay said it was questioned by 27 regulators from 15 jurisdictions which affected 9.4 million passengers.
+    </p>
+    <h2>Fierce competition with Cathay's main rival: HKA</h2>
+    <p>
+        Cathay Pacific is not the only local based airline company. The main rival Hong Kong Airline is also ambitious about obtaining a larger market share.
+
+
+    </p>
+    <p>
+        Currently Cathay holds 46% slots in HKIA while HK Express (HKE) has 5% slots in HKIA. Should Cathay acquire HKE, Cathay will have around 50% of slots in the airport while Hong Kong Airline has 10% of slots in HKIA.
+    </p>
+    <p>
+        HKIA's two runways are near saturation, leaving airlines little room to add new flights. The Civil Aviation Department of Hong Kong said in a statement that HKIA "is reaching its capacity and any further increase in capacity will only be marginal until
+        the commissioning of the third runway." The huge differences between Cathay and HKA on the number of slots set HKA's teeth on edge.
+    </p>
+    <img src="https://cdn.blueswandaily.com//2017/07/hkairline-0604-net.jpg">
+    <p>
+        Backed by conglomerate HNA, HKA targeted at its "affordable luxury" strategy and the company has also expanded its long-haul routes, offering direct services between Hong Kong and San Francisco and also New York's JFK airport.
+
+
+    </p>
+    <p>
+        Josh Cahill, a popular airline blogger said he had tried the services provided both by Hong Kong airline and Cathay Pacific. He would give a five-star comment on Hong Kong Airline as the food is delicious, portion is large while the services are efficient.
+        However, Cathay Pacific only got a three star on its airline services since the portion of food is small and the taste is not as good as Hong Kong Airline.
+    </p>
+    <h2>Debt and ownership issues within HKA</h2>
+    <p>
+        However, the good services cannot help the HKA to fully cover its financial distress. Many people concerned the HKA would be mired in liquidation on January 2019 since the parent company HNA group has been offloading its stakes and still in divesting
+        process, unable to provide enough cash for its subsidiaries to pay back debt.
+
+    </p>
+    <p>
+        China Development Bank lent HKA HK$4.3 billion to redeem the debt matured on 2019 January 20th. However, the future of HKA is still uncertain as the company has borrowed a lot in the past and whether it is capable to pay back is highly doubted.
+
+
+    </p>
+    <p>
+        The internal management problem of HKA also sparked concerns regarding its internal management. Former Hong Kong Airline director Zhong Guosong announced he had been appointed as chairman in HKA. This announcement is challenged by Hou wei, the former
+        chairman who claimed he is still the chairman and the board changes were a result of a shareholder dispute. The battle between the two parts was further intensified when the theft of financial documents of HKA happened. Although HKA denied there
+        had been any theft happened. People familiar with the matter said HNA staff were said to have entered the office and removed papers.
+    </p>
+    <p>Zhong accused HNA of inappropriate behaviors by storming HKA's office and taking away financial information. HKA stated in its statement "as a private company, Hong Kong Airlines does not comment on its shareholding structure. However, we believe
+        that our stakeholders will solve the issue in a professional and impartial manner." HNA did not respond to the issue.
+
+
+    </p>

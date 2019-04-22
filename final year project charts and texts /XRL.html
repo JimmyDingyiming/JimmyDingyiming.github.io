@@ -12,12 +12,23 @@
 </head>
 
 <body>
+    <!-- <script src="../Highcharts.7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts.7.0.3/code/highcharts-more.js"></script>
+    <script src="../Highcharts.7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts.7.0.3/code/modules/export-data.js"></script>
+
     <script src="../../code/highcharts.js"></script>
     <script src="../../code/highcharts-more.js"></script>
     <script src="../../code/modules/exporting.js"></script>
-    <script src="../../code/modules/export-data.js"></script>
+    <script src="../../code/modules/export-data.js"></script> -->
+
+    <script src="../Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="../Highcharts-7.0.3/code/highcharts-more.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="../Highcharts-7.0.3/code/modules/export-data.js"></script>
 
     <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
 
 
     <script type="text/javascript">
@@ -47,14 +58,14 @@
             },
 
             tooltip: {
-                valueSuffix: 'Yuan'
+                valueSuffix: 'RMB'
             },
 
             plotOptions: {
                 columnrange: {
                     dataLabels: {
                         enabled: true,
-                        format: '{y}Yuan'
+                        format: '{y}RMB'
                     }
                 }
             },

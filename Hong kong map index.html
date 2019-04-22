@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Highmaps Example</title>
+    <title>HK population on map</title>
 
     <style type="text/css">
 
@@ -26,24 +26,39 @@
 
 
     <script type="text/javascript">
-        $.getJSON('world-population.json', function(data) {
+        var data = [
 
+            ['Central & Western', 243266],
+            ['Wan Chai', 180123],
+            ['Eastern', 555034],
+            ['Southern', 274994],
+            ['Yau Tsim Mong', 342970],
+            ['Sham Shui Po', 405869],
+            ['Kowloon City', 418732],
+            ['Wong Tai Sin', 425235],
+            ['Kwun Tong', 648541],
+            ['Kwai Tsing', 520572],
+            ['Tsuen Wan', 318916],
+            ['Tuen Mun', 489299],
+            ['Yuen Long', 614178],
+            ['North', 315270],
+            ['Tai Po', 303926],
+            ['Sha Tin', 659794],
+            ['Sai Kung', 461864],
+            ['Islands', 156801]
+
+        ];
+
+        $.getJSON('dc_land.lowres.geo.json', function(geojson) {
+
+            // Initiate the chart
             Highcharts.mapChart('container', {
                 chart: {
-                    borderWidth: 1,
-                    map: 'custom/world'
+                    map: geojson
                 },
 
                 title: {
-                    text: 'Air crashed happened in the past five years'
-                },
-
-                subtitle: {
-                    text: 'The larger the radius of the bubble, the more people died in that aircrash. (If the aircrash site does not belong to any country, the depature country will be seen as where the accident happens.'
-                },
-
-                legend: {
-                    enabled: false
+                    text: 'Hong Kong Working Population'
                 },
 
                 mapNavigation: {
@@ -53,19 +68,23 @@
                     }
                 },
 
+                colorAxis: {
+                    tickPixelInterval: 100
+                },
+
                 series: [{
-                    name: 'fatality',
-                    color: '#E0E0E0',
-                    enableMouseTracking: false
-                }, {
-                    type: 'mapbubble',
-                    name: 'fatality',
-                    joinBy: ['iso-a3', 'code3'],
                     data: data,
-                    minSize: 4,
-                    maxSize: '12%',
-                    tooltip: {
-                        pointFormat: '{point.z}'
+                    keys: ['DC_ENG', 'value'],
+                    joinBy: 'DC_ENG',
+                    name: 'Random data',
+                    states: {
+                        hover: {
+                            color: '#a4edba'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.properties.postal}'
                     }
                 }]
             });
