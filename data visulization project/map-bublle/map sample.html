@@ -1,0 +1,66 @@
+<html>
+
+<body>
+    <div id='container'></div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="../Highmaps-7/code/highmaps.js"></script>
+    <script src="../Highmaps-7/code/modules/data.js"></script>
+    <script src="../Highmaps-7/code/modules/exporting.js"></script>
+    <script src="../Highmaps-7/code/modules/offline-exporting.js"></script>
+    <script src="world.js"></script>
+
+
+    <script type="text/javascript">
+        // Prepare random data
+        var data = [
+            ['hk', 7280],
+            ['kl&nt', 7100],
+            ['air plane', 9630]
+        ];
+
+        $.getJSON('map.geojson', function(geojson) {
+
+            // Initiate the chart
+            Highcharts.mapChart('container', {
+                chart: {
+                    map: geojson
+                },
+
+                title: {
+                    text: 'GeoJSON in Highmaps'
+                },
+
+                mapNavigation: {
+                    enabled: true,
+                    buttonOptions: {
+                        verticalAlign: 'bottom'
+                    }
+                },
+
+                colorAxis: {
+                    tickPixelInterval: 100
+                },
+
+                series: [{
+                    data: data,
+                    keys: ['name', 'value'],
+                    joinBy: 'name',
+                    name: 'Random data',
+                    states: {
+                        hover: {
+                            color: '#a4edba'
+                        }
+                    },
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.properties.postal}'
+                    }
+                }]
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -29,10 +29,10 @@
                 type: 'pie'
             },
             title: {
-                text: 'Different types of aircraft owned in Hong Kong Airline'
+                text: 'Different types of aircraft owned by HKA'
             },
             tooltip: {
-                pointFormat: '{series.name}: <b>{point.y} fleets</b>'
+                pointFormat: '{series.name}: <b>{point.y} </b>'
             },
             plotOptions: {
                 pie: {
@@ -40,7 +40,7 @@
                     cursor: 'pointer',
                     dataLabels: {
                         enabled: true,
-                        format: '<b>{point.name}</b>: {point.y} fleets ',
+                        format: '<b>{point.name}</b>: {point.y}  ',
                         style: {
                             color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
                         }
